@@ -6,8 +6,11 @@ WORKDIR /app
 
 # Copy your custom entrypoint script
 COPY entrypoint.py /starter/
+#install python using the installed package manager (apk, apt, pacman, ...) 
+#If it is already installed remove the following 2 lines
 RUN apt update
 RUN apt install python3
+
 # Make the script executable (if necessary)
 RUN chmod +x /starter/entrypoint.py
 
